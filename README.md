@@ -59,8 +59,8 @@ tests/
 .streamlit/
 ```
 
-Empty directories are retained with `.gitkeep` files. Runtime resources are
-intentionally excluded from the public repository.
+Runtime directories include brief README files describing the expected resources.
+Study-specific runtime resources are not included in the public repository.
 
 ## Configuration
 
