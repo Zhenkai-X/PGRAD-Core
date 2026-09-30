@@ -1,15 +1,14 @@
-# PGRAD: Prior-Guided Evidence-Chain Reasoning and Diagnosis for Quantitative CT Parameter-Based Pulmonary Function Evaluation with Multicenter Real-World Validation Under Missing Expiratory Chest CT
+# PGRAD
+
+**Prior-Guided Evidence-Chain Reasoning and Diagnosis for Quantitative CT-Based Pulmonary Function Evaluation**
 
 ![PGRAD framework](figure/pgrad_framework.png)
 
-*Figure 1. Overview of the PGRAD framework.*
+*Overview of the PGRAD framework.*
 
-PGRAD (Prior-Guided Graph Reasoning and Diagnosis) is an evidence-chain reasoning framework for interpretable quantitative CT-based differentiation of NC, PRISm, and COPD.
+PGRAD is a prior-guided evidence-chain reasoning framework for interpretable quantitative CT-based differentiation of NC, PRISm, and COPD.
 
-This repository is a code-only public release. It contains source code,
-configuration, tests, and empty runtime directories. It does not distribute
-trained weights, subject-level data, case-level evidence, demo inputs,
-experimental outputs, or credentials.
+It integrates QCT-based prior modeling, subject-level evidence construction, retrieval of supportive and confusable cases, and constrained LLM reasoning to generate structured diagnostic reports.
 
 ## Workflow
 
