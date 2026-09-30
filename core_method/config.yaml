@@ -1,0 +1,70 @@
+project:
+  random_seed: 42
+  classes:
+    - NC
+    - PRISm
+    - COPD
+
+prior_model:
+  top_k_predictors: 20
+  n_splits: 5
+  missing_threshold: 0.30
+  correlation_threshold: 0.90
+  near_constant_threshold: 0.98
+
+  logistic_regression:
+    penalty: l1
+    solver: saga
+    C: 1.0
+    max_iter: 5000
+    class_weight: balanced
+
+  feature_score:
+    mutual_information: 0.30
+    model_importance: 0.35
+    coefficient_magnitude: 0.25
+    selection_stability: 0.10
+
+  gradient_boosting:
+    n_estimators: 600
+    learning_rate: 0.05
+    num_leaves: 31
+    max_depth: -1
+    class_weight: balanced
+
+  class_balance:
+    major_class: NC
+    major_class_factor: 3
+
+evidence:
+  top_k_evidence: 30
+  reference_class: NC
+
+retrieval:
+  top_k_supportive: 3
+  top_k_confusable: 3
+
+  similarity_weights:
+    direction: 0.4
+    percentile: 0.3
+    deviation: 0.3
+
+gating:
+  tau_strong: 0.5067
+  tau_weak: 0.1122
+  tau_similarity: 1.6948
+
+llm:
+  temperature: 0.1
+  default_backend: qwen
+  review_states:
+    - KEEP
+    - SWITCH
+    - ABSTAIN
+
+paths:
+  training_data: data/train.csv
+  external_data: data/external.csv
+  model_output: outputs/prior_model
+  evidence_output: outputs/evidence
+  reasoning_output: outputs/pgrad
